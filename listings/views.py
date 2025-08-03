@@ -1,3 +1,5 @@
+from .serializers import ListingSerializer, BookingSerializer
+from .models import Listing, Booking
 from rest_framework import viewsets
 from .models import PropertyType, Location, Property
 from .serializers import PropertyTypeSerializer, LocationSerializer, PropertySerializer
@@ -27,3 +29,13 @@ class LocationViewSet(viewsets.ModelViewSet):
 class PropertyViewSet(viewsets.ModelViewSet):
     queryset = Property.objects.all()
     serializer_class = PropertySerializer
+
+
+class ListingViewSet(viewsets.ModelViewSet):
+    queryset = Listing.objects.all()
+    serializer_class = ListingSerializer
+
+
+class BookingViewSet(viewsets.ModelViewSet):
+    queryset = Booking.objects.all()
+    serializer_class = BookingSerializer
